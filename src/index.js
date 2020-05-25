@@ -14,24 +14,19 @@ class App extends React.Component {
     ]
   }
 
+  handleClick = () => {
+    console.log(this.state);
+  }
+
   render() {
     const title = "Liste de consoles";
-    const element = <li>Test variable</li>
-    /* 
-     const elements = [
-         <li>first variable</li>,
-         <li>second variable</li>,
-         <li>third variable</li>
-     ] 
-     */
-    const elements = this.state.consoles.map((console) =>
-      <li>{console.nom}<button>X</button></li>
-    )
     return (
       <div>
         <h1>{title}</h1>
+        <button onClick={this.handleClick} >Click to say hello</button>
         <ul>
-          {elements}
+          {this.state.consoles.map(console => (
+            <li>{console.nom}<button>suppr</button></li>))}
         </ul>
         <form>
           <input type="text" placeholder="Ajouter une console" />
