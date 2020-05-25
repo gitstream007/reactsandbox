@@ -23,7 +23,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>{title}</h1>
-        <button onClick = {this.handleClick.bind(this)} >Click to say hello</button>
+        <button onClick={() => this.handleClick()} >Click to say hello</button>
         <ul>
           {this.state.consoles.map(console => (
             <li>{console.nom}<button>suppr</button></li>))}
