@@ -1,20 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
 import "./styles.css";
 
 class App extends React.Component {
-
   state = {
     consoles: [
       { id: 1, nom: "Master System" },
       { id: 2, nom: "Megadrive" },
       { id: 3, nom: "Snes" },
       { id: 4, nom: "Arcade" }
-    ]
+    ],
+    count: 0
   }
 
   handleClick = () => {
+    this.setState({count: this.state.count+1});
     console.log(this.state);
   }
 
@@ -23,6 +23,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>{title}</h1>
+        {this.state.count}
         <button onClick={this.handleClick} >Click to say hello</button>
         <ul>
           {this.state.consoles.map(console => (
